@@ -16,7 +16,7 @@ textarea {
 <SCRIPT LANGUAGE="JavaScript">
 	function submitForm() {
 		if (mode == 'write') {
-			fm.sction = "notice_write.jsp";
+			fm.action = "notice_write.jsp";
 		} else if (mode == "delete") {
 			fm.action = "notice_delete.jsp";
 		}

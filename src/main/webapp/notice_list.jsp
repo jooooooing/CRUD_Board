@@ -4,10 +4,10 @@
 
 <html>
 <head>
-<title>리스트</title>
+<title>공지사항 게시판 </title>
 </head>
 <body>
-	<h3>공지사항 리스트</h3>
+	<h3>공지사항 게시판</h3>
 	<table cellspacing=1 width=600 border=1>
 		<tr>
 			<td width=50><p align=center>번호</p></td>
