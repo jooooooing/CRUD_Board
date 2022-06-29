@@ -15,9 +15,14 @@ textarea {
 </style>
 <SCRIPT LANGUAGE="JavaScript">
 	function submitForm(mode) {
-		fm.action = "notice_write.jsp";
+		if (mode == "write") {
+			fm.action = "notice_write.jsp";
+		} else if (mode == "delete") {
+			fm.action = "notice_delete.jsp";
+		}
 		fm.submit();
 	}
+
 	//특수문자 금지 (이름)
 	function characterCheck(obj) {
 		var regExp = /[ \{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\'\"\\\(\=]/gi;
@@ -35,8 +40,6 @@ Statement stmt = conn.createStatement(); //객체생성
 String today = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
 %>
 <body>
-
-
 	<FORM METHOD=POST name='fm'>
 		<table width=650 border=1 cellspacing=0 cellpadding=5>
 			<tr>
@@ -72,6 +75,7 @@ String today = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util
 stmt.close();
 conn.close();
 %>
+
 		</table>
 	</FORM>
 </body>

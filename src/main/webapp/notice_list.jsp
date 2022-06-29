@@ -4,9 +4,10 @@
 
 <html>
 <head>
-<title>공지사항 게시판 </title>
+<title>공지사항 게시판</title>
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 	<h3>공지사항 게시판</h3>
 	<table cellspacing=1 width=600 border=1>
 		<tr>
@@ -22,8 +23,8 @@
 		ResultSet rset = stmt.executeQuery("select * from notice order by id desc;");
 		while (rset.next()) {
 			int id = rset.getInt(1);
+			
 		%>
-
 		<tr>
 			<td align=center><%=id%></td>
 			<td><a href='notice_view.jsp?key=<%=id%>'><%=rset.getString(2)%></a></td>
@@ -37,7 +38,8 @@
 	<table>
 		<tr>
 			<td width=550></td>
-			<td><input align=right type=submit OnClick=location.href='notice_insert.jsp' value=신규></input></td>
+			<td><input align=right type=submit
+				OnClick="window.location.href='notice_insert.jsp'" value=신규></input></td>
 		</tr>
 	</table>
 

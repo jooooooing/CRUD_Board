@@ -15,7 +15,7 @@ textarea {
 </style>
 <SCRIPT LANGUAGE="JavaScript">
 	function submitForm() {
-		if (mode == 'write') {
+		if (mode == "write") {
 			fm.action = "notice_write.jsp";
 		} else if (mode == "delete") {
 			fm.action = "notice_delete.jsp";
@@ -40,25 +40,22 @@ String today = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util
 Class.forName("com.mysql.cj.jdbc.Driver");
 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kopoctc", "root", "koposw31");
 Statement stmt = conn.createStatement(); //객체생성
-String id_notice = request.getParameter("key");
-ResultSet rset = stmt.executeQuery("select * from notice where id='" + id_notice + "';");
+String id_from_view = request.getParameter("key");
+ResultSet rset = stmt.executeQuery("select * from notice where id='" + id_from_view + "';");
 
 request.setCharacterEncoding("UTF-8"); // 한글 처리
 rset.next();
 int id = rset.getInt(1);
 String title = rset.getString(2);
 String content = rset.getString(4);
-rset.close();
-stmt.close();
-conn.close();
 
 //response.Redirection("gongji_list.jsp");
 %>
-<FORM METHOD=POST name='fm'>
+<FORM METHOD="POST" action="notice_updateData.jsp">
 	<table width=650 border=1 cellspacing=0 cellpadding=5>
 		<tr>
 			<td><b>번호</b></td>
-			<td><%=id%><input type=hidden name=id value='INSERT'></td>
+			<td><%=id%><input type=hidden name=id value=<%=id%>></td>
 			<!--hidden 은 사용자가 변경해선 안되는 데이터를 보낼 때 사용-->
 		</tr>
 		<tr>
@@ -77,6 +74,8 @@ conn.close();
 					style='width: 500px; height: 250px; overflow-y: scroll'
 					name=content cols=70 row=600 required><%=content%></textarea></td>
 		</tr>
+
+
 	</table>
 
 	<table width=650>
@@ -84,12 +83,18 @@ conn.close();
 			<td width=600></td>
 			<td><input type=button value="취소"
 				OnClick="window.location='notice_list.jsp'"></td>
-			<td><input type=submit value="쓰기" OnClick="submitForm('write')"></td>
+			<td><input type=submit value="저장"></td>
 			<td><input type=button value="삭제"
 				OnClick="location.href='notice_delete.jsp?key=<%=id%>'"></td>
 		</tr>
 	</table>
 </FORM>
+		<%
+		rset.close();
+		stmt.close();
+		conn.close();
+		%>
+
 
 </body>
 </html>

@@ -15,7 +15,6 @@
 	Statement stmt = conn.createStatement();
 	%>
 	<%
-	/* 테이블 생성 */
 /* 	try {
 		stmt.execute("create table notice( id int not null primary key auto_increment, title varchar(70),"
 		+ "date date, content text)DEFAULT CHARSET=utf8");
@@ -23,7 +22,7 @@
 	} catch (Exception e) {
 		out.println("table 생성 실패");
 		out.println(e.toString());
-	} */
+	}  */
 	%>
 
 	<%
@@ -42,12 +41,18 @@ try {
 	out.println("data 입력 완료");
 } catch (Exception e) {
 	out.println("data 입력 실패");
-}
+} 
 
 
 stmt.close();
 conn.close();
 %>
+
+		<table width=540>
+			<td width=500></td>
+			<td><input type=button value="목록으로 돌아가기"
+				OnClick="location.href='notice_list.jsp'"></td>
+		</table>
 
 </body>
 </html>
