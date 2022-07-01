@@ -26,9 +26,6 @@ textarea {
 </head>
 <%
 String today = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
-%>
-
-<%
 request.setCharacterEncoding("UTF-8"); // 한글 처리
 int id = Integer.parseInt(request.getParameter("id"));
 String title = request.getParameter("title");
@@ -47,7 +44,6 @@ pstmt.executeUpdate();
 
 pstmt.close();
 conn.close();
-
 %>
 	<script>
 		alert("수정완료");

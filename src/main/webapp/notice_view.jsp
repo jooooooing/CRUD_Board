@@ -19,7 +19,7 @@
 	rset.next();
 	Integer id_notice2 = rset.getInt(1);//번호
 	String title = rset.getString(2); //제목
-	String today = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
+	String today = rset.getString(3); // 날짜
 	String content = rset.getString(4); //내용
 %>
 <title>글 보기</title>

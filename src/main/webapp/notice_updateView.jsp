@@ -34,9 +34,6 @@ textarea {
 </head>
 <%
 String today = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
-%>
-
-<%
 Class.forName("com.mysql.cj.jdbc.Driver");
 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kopoctc", "root", "koposw31");
 Statement stmt = conn.createStatement(); //객체생성
