@@ -11,9 +11,15 @@
 	<h3>공지사항 게시판</h3>
 	<table cellspacing=1 width=600 border=1>
 		<tr>
-			<td width=50><p align=center>번호</p></td>
-			<td width=500><p align=center>제목</p></td>
-			<td width=100><p align=center>등록일</p></td>
+			<td width=50>
+				<p align=center>번호</p>
+			</td>
+			<td width=500>
+				<p align=center>제목</p>
+			</td>
+			<td width=100>
+				<p align=center>등록일</p>
+			</td>
 		</tr>
 
 		<%
@@ -23,11 +29,12 @@
 		ResultSet rset = stmt.executeQuery("select * from notice order by id desc;");
 		while (rset.next()) {
 			int id = rset.getInt(1);
-			
 		%>
 		<tr>
 			<td align=center><%=id%></td>
-			<td><a href='notice_view.jsp?key=<%=id%>'><%=rset.getString(2)%></a></td>
+			<td>
+				<a href='notice_view.jsp?key=<%=id%>'><%=rset.getString(2)%></a>
+			</td>
 			<td align=center><%=rset.getString(3)%></td>
 		</tr>
 		<%
@@ -38,8 +45,9 @@
 	<table>
 		<tr>
 			<td width=550></td>
-			<td><input align=right type=submit
-				OnClick="window.location.href='notice_insert.jsp'" value=신규></input></td>
+			<td>
+				<input align=right type=submit OnClick="window.location.href='notice_insert.jsp'" value=신규></input>
+			</td>
 		</tr>
 	</table>
 
@@ -53,5 +61,6 @@ conn.close();
 
 		</tr>
 	</table>
+</body>
 </html>
 </head>
