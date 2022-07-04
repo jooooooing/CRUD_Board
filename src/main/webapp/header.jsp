@@ -24,7 +24,7 @@
 	<div class="menus">
 		<b class="menu"><a href="notice_list.jsp">공지사항</a></b>
 		 
-		<b class="menu"><a href="makedata.jsp">초기화</a></b>
+		<b class="menu"><a href="makedata.jsp">data 5개 추가</a></b>
 	</div>
 
 
