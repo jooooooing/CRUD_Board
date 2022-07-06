@@ -19,7 +19,6 @@
 	String title = request.getParameter("title");
 	String today = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
 	String content = request.getParameter("content");
-	String key = request.getParameter("key");
 	String rootid = request.getParameter("rootid");
 	int relevel = 0;
 	relevel = Integer.parseInt(request.getParameter("relevel"));

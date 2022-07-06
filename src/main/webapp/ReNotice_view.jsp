@@ -32,7 +32,7 @@ rootid = rset.getString(5);
 </head>
 <body>
 
-	<table border=1 cellspacing=0 cellpadding=5>
+		<table cellspacing=1 width=650 border="1" style="margin-left: auto; margin-right: auto;">
 
 		<tr>
 			<td>
@@ -63,7 +63,10 @@ rootid = rset.getString(5);
 		</tr>
 
 		<td>내용</td>
-		<td><%=contents%></td>
+		<td width=480 colspan=3 align=left>
+			<textarea rows="10px" cols="70px" readonly><%=contents%>
+		</textarea>
+		</td>
 		</tr>
 		<tr>
 			<td>원글</td>
@@ -72,15 +75,17 @@ rootid = rset.getString(5);
 		<tr>
 			<td>댓글수준</td>
 			<td><%=relevel%>
-				<b>댓글내 순서<%=recnt%></b></td>
+				<b>댓글내 순서<%=recnt%></b>
+			</td>
 			<%
 			rset.close();
 			stmt.close();
 			conn.close();
 			%>
 		</tr>
-	</table>
-	<table width=540>
+	</table> 
+
+	<table width="650" style="margin-left: auto; margin-right: auto;">
 
 		<tr>
 			<td width=500></td>

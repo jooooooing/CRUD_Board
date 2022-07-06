@@ -40,7 +40,7 @@ Statement stmt = conn.createStatement(); //객체생성
 String today = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
 %>
 <body>
-	<FORM METHOD=POST name='fm' action="ReNotice_writeForm.jsp">
+	<FORM METHOD=POST name='fm' action="ReNotice_write.jsp">
 		<table width=650 border=1 cellspacing=0 cellpadding=5>
 			<tr>
 				<td><b>번호</b></td>

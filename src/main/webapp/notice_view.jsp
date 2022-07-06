@@ -61,6 +61,7 @@ function submitForm(mode){
 <textarea rows="10px" cols="60px" readonly>
 <%=content%>
 </textarea>
+</td>
 <%-- <input type='hidden' name="content" value=<%=content%>><%=content%></td> --%>
 </tr>
 <%	
