@@ -47,7 +47,7 @@ conn.close();
 %>
 	<script>
 		alert("수정완료");
-		window.location.href = "ReNotice_list.jsp?from=0&cnt=15&page=1'"; //특정페이지로의 이동
+		window.location.href = "ReNotice_list.jsp?from=0&cnt=15&page=1"; //특정페이지로의 이동
 	</script>
 </body>
 </html>
